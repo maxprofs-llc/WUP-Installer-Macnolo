@@ -68,7 +68,7 @@ static void GetInstallDir(char *dest, int size)
 	}
 	if (!dirsFound)
 	{
-		__os_snprintf(dest, size, "install");
+		__os_snprintf(dest, size, "");
 		dirNum = 0;
 	}
 }
@@ -417,17 +417,17 @@ int Menu_Main(void)
 
 				if (!doInstall)
 				{
-					OSScreenPutFontEx(i, 0, 8, "Selecciona carpeta de instalacion: (* = Selected)");
+					OSScreenPutFontEx(i, 0, 7, "Selecciona carpeta de instalacion:");
 					__os_snprintf(text, sizeof(text), "%c  %s", folderSelect[dirNum] ? '*' : ' ', installFolder);
-					OSScreenPutFontEx(i, 0, 9, text);
+					OSScreenPutFontEx(i, 0, 8, text);
 
-					OSScreenPutFontEx(i, 0, 10, "Presiona D-Pad U/D para cambiar carpeta.");
-					OSScreenPutFontEx(i, 0, 11, "Presiona D-Pad L/R para seleccionar/deseleccionar carpeta.");
-					OSScreenPutFontEx(0, 0, 12, "Presiona + para seleccionar todas las carpetas y - para deseleccionarlas todas las carpetas.");
-          OSScreenPutFontEx(1, 0, 12, "Presiona +/- para seleccionar/deseleccionar todas las carpetas.");
-					OSScreenPutFontEx(i, 0, 13, "Presiona A para instalar en la NAND.");
-					OSScreenPutFontEx(i, 0, 14, "Presiona X para instalar en la memoria externa.");
-					OSScreenPutFontEx(i, 0, 15, "Presiona Y para rescanear.");
+					OSScreenPutFontEx(i, 0, 9, "Presiona D-Pad U/D para cambiar carpeta.");
+					OSScreenPutFontEx(i, 0, 10, "Presiona D-Pad L/R para seleccionar/deseleccionar carpeta.");
+					OSScreenPutFontEx(0, 0, 11, "Presiona + para seleccionar todas las carpetas y - para deseleccionarlas todas las carpetas.");
+          OSScreenPutFontEx(1, 0, 11, "Presiona +/- para seleccionar/deseleccionar todas las carpetas.");
+					OSScreenPutFontEx(i, 0, 12, "Presiona A para instalar en la NAND.");
+					OSScreenPutFontEx(i, 0, 13, "Presiona X para instalar en la memoria externa.");
+					OSScreenPutFontEx(i, 0, 14, "Presiona Y para rescanear.");
 				}
 				else
 				{
